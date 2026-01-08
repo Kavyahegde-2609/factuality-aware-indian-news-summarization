@@ -82,8 +82,8 @@ class NewsSummBaselineEvaluator:
         if len(df) > max_samples:
             df = df.head(max_samples)
         
-        print(f"📁 Test file: {test_file.name}")
-        print(f"📊 Samples: {len(df):,}\n")
+        print(f" Test file: {test_file.name}")
+        print(f" Samples: {len(df):,}\n")
         
         return df
     
