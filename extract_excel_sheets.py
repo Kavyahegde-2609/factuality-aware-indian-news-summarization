@@ -9,14 +9,14 @@ print("="*70)
 excel_file = Path('data/raw/newsumm/NewsSumm Dataset.xlsx')
 output_path = Path('data/raw/newsumm')
 
-print(f"\n📂 Reading: {excel_file.name}")
+print(f"\nReading: {excel_file.name}")
 
 try:
     # Read Excel file and get all sheet names
     excel_data = pd.ExcelFile(excel_file)
     sheet_names = excel_data.sheet_names
     
-    print(f"✅ Found {len(sheet_names)} sheets: {sheet_names}")
+    print(f"Found {len(sheet_names)} sheets: {sheet_names}")
     
     # Process each sheet
     for sheet_name in sheet_names:
@@ -45,18 +45,18 @@ try:
         csv_file = output_path / csv_name
         df.to_csv(csv_file, index=False, encoding='utf-8')
         
-        print(f"   ✅ Saved as: {csv_name}")
+        print(f"    Saved as: {csv_name}")
         
         # Show sample
         if len(df) > 0 and 'article' in df.columns:
             print(f"   First article preview: {str(df['article'].iloc[0])[:80]}...")
     
     print("\n" + "="*70)
-    print("✅ All sheets extracted successfully!")
+    print(" All sheets extracted successfully!")
     print("="*70)
     
     # List created files
-    print("\n📁 Created CSV files:")
+    print("\n Created CSV files:")
     csv_files = list(output_path.glob('*.csv'))
     for csv_file in csv_files:
         file_size = csv_file.stat().st_size / 1024 / 1024  # MB

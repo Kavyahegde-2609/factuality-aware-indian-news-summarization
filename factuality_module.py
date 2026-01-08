@@ -18,19 +18,19 @@ from config import FACTUALITY_WEIGHTS
 class FactualityChecker:
     
     def __init__(self):
-        print("⏳ Loading factuality checker...")
+        print(" Loading factuality checker...")
         
         try:
             self.nlp = spacy.load('en_core_web_sm')
         except:
-            print("📥 Downloading spaCy model...")
+            print(" Downloading spaCy model...")
             import subprocess
             subprocess.run(['python', '-m', 'spacy', 'download', 'en_core_web_sm'])
             self.nlp = spacy.load('en_core_web_sm')
         
         self.encoder = SentenceTransformer('all-MiniLM-L6-v2')
         
-        print("✅ Factuality checker ready\n")
+        print(" Factuality checker ready\n")
     
     def extract_entities(self, text):
         doc = self.nlp(text)
@@ -107,7 +107,7 @@ class FactualityChecker:
 
 
 def test():
-    print("🧪 Testing factuality checker\n")
+    print(" Testing factuality checker\n")
     
     checker = FactualityChecker()
     
@@ -130,7 +130,7 @@ def test():
     print(f"  Semantic: {scores2['semantic']}")
     print(f"  Overall: {scores2['overall']}\n")
     
-    print("✅ Test complete")
+    print(" Test complete")
 
 
 if __name__ == "__main__":
