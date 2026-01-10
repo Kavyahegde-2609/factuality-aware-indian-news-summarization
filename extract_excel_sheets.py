@@ -20,7 +20,7 @@ try:
     
     # Process each sheet
     for sheet_name in sheet_names:
-        print(f"\n📄 Processing sheet: {sheet_name}")
+        print(f"\n Processing sheet: {sheet_name}")
         
         # Read the sheet
         df = pd.read_excel(excel_file, sheet_name=sheet_name)
@@ -63,6 +63,6 @@ try:
         print(f"   {csv_file.name} ({file_size:.2f} MB)")
     
 except Exception as e:
-    print(f"\n❌ Error: {e}")
+    print(f"\n Error: {e}")
     import traceback
     traceback.print_exc()
