@@ -11,7 +11,7 @@ print("="*70)
 # Load the CSV
 df = pd.read_csv('data/raw/newsumm/NewsSumm Dataset.csv')
 
-print(f"\n✅ Loaded {len(df):,} articles")
+print(f"\n Loaded {len(df):,} articles")
 print(f"Columns: {df.columns.tolist()}")
 
 # Standardize column names
@@ -26,7 +26,7 @@ df = df.rename(columns={
 # Remove missing data
 df = df.dropna(subset=['article', 'summary'])
 
-print(f"\n✅ After cleaning: {len(df):,} articles")
+print(f"\n After cleaning: {len(df):,} articles")
 
 # Create splits
 train_size = int(0.90 * len(df))
