@@ -1,17 +1,52 @@
-# Virtual environment
-venv/
-
-# Python cache
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
 
-# OS files
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+tempCodeRunnerFile.py
+
+# Data (too large for GitHub)
+data/processed/train_full.csv
+data/processed/val_full.csv
+data/processed/test_full.csv
+data/raw/**/*.csv
+*.xlsx
+
+# Models (too large)
+models/
+checkpoints/
+*.bin
+*.pt
+*.pth
+
+# Results (keep summaries, ignore detailed)
+results/**/detailed_predictions.json
+results/**/*.bin
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
 .DS_Store
 Thumbs.db
 
-# Data - ignore raw data and FULL datasets (too large for GitHub)
-data/raw/
-data/processed/*_full.csv
-
-# Keep small datasets for testing
-!data/processed/*_small.csv
+# Temp
+temp/
+tmp/
+*.tmp
+test_*.py
+Test_*.py

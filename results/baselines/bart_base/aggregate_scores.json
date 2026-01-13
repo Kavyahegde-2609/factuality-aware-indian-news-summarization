@@ -1,0 +1,20 @@
+{
+  "model_name": "BART-Base",
+  "model_id": "facebook/bart-base",
+  "evaluation_date": "2026-01-09 11:31:13",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 46.16,
+  "rouge2_mean": 21.67,
+  "rougeL_mean": 29.92,
+  "rouge1_std": 10.66,
+  "rouge2_std": 10.87,
+  "rougeL_std": 9.77,
+  "evaluation_time_seconds": 15825.59,
+  "time_per_sample": 79.13,
+  "avg_input_length": 521.0,
+  "avg_padded_length": 521.0,
+  "padding_overhead_percent": 0.0
+}

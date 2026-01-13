@@ -1,0 +1,12 @@
+{
+  "model_name": "BART-CNN",
+  "model_id": "facebook/bart-large-cnn",
+  "samples_evaluated": 200,
+  "rouge1": 38.04,
+  "rouge2": 19.29,
+  "rougeL": 28.19,
+  "rouge1_std": 13.32,
+  "rouge2_std": 14.88,
+  "rougeL_std": 13.82,
+  "time_seconds": 2551.4
+}

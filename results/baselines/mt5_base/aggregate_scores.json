@@ -1,0 +1,20 @@
+{
+  "model_name": "mT5-Base",
+  "model_id": "google/mt5-base",
+  "evaluation_date": "2026-01-10 15:33:36",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 14.92,
+  "rouge2_mean": 4.38,
+  "rougeL_mean": 10.14,
+  "rouge1_std": 8.07,
+  "rouge2_std": 4.7,
+  "rougeL_std": 5.12,
+  "evaluation_time_seconds": 2744.22,
+  "time_per_sample": 13.72,
+  "avg_input_length": 583.0,
+  "avg_padded_length": 583.0,
+  "padding_overhead_percent": 0.0
+}

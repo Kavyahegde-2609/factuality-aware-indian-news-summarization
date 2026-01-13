@@ -1,0 +1,20 @@
+{
+  "model_name": "T5-Large",
+  "model_id": "t5-large",
+  "evaluation_date": "2026-01-10 08:54:13",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 40.26,
+  "rouge2_mean": 18.95,
+  "rougeL_mean": 28.45,
+  "rouge1_std": 9.8,
+  "rouge2_std": 10.82,
+  "rougeL_std": 10.37,
+  "evaluation_time_seconds": 43501.38,
+  "time_per_sample": 217.51,
+  "avg_input_length": 547.0,
+  "avg_padded_length": 547.0,
+  "padding_overhead_percent": 0.0
+}

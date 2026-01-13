@@ -1,0 +1,20 @@
+{
+  "model_name": "PEGASUS-XSum",
+  "model_id": "google/pegasus-xsum",
+  "evaluation_date": "2026-01-10 15:59:36",
+  "total_samples": 200,
+  "successful_samples": 123,
+  "failed_samples": 77,
+  "success_rate": 61.5,
+  "rouge1_mean": 33.27,
+  "rouge2_mean": 13.39,
+  "rougeL_mean": 21.82,
+  "rouge1_std": 9.81,
+  "rouge2_std": 7.62,
+  "rougeL_std": 8.0,
+  "evaluation_time_seconds": 1559.33,
+  "time_per_sample": 12.68,
+  "avg_input_length": 324.0,
+  "avg_padded_length": 324.0,
+  "padding_overhead_percent": 0.0
+}

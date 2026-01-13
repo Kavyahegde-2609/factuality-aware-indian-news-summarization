@@ -1,0 +1,20 @@
+{
+  "model_name": "LongT5-Base",
+  "model_id": "google/long-t5-tglobal-base",
+  "evaluation_date": "2026-01-10 11:35:07",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 34.39,
+  "rouge2_mean": 14.43,
+  "rougeL_mean": 22.79,
+  "rouge1_std": 10.72,
+  "rouge2_std": 10.4,
+  "rougeL_std": 9.94,
+  "evaluation_time_seconds": 5663.54,
+  "time_per_sample": 28.32,
+  "avg_input_length": 547.0,
+  "avg_padded_length": 547.0,
+  "padding_overhead_percent": 0.0
+}

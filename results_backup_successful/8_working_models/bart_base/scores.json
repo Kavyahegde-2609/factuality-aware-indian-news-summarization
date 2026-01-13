@@ -1,0 +1,12 @@
+{
+  "model_name": "BART-Base",
+  "model_id": "facebook/bart-base",
+  "samples_evaluated": 200,
+  "rouge1": 42.72,
+  "rouge2": 20.36,
+  "rougeL": 28.03,
+  "rouge1_std": 11.74,
+  "rouge2_std": 10.46,
+  "rougeL_std": 10.34,
+  "time_seconds": 4411.67
+}

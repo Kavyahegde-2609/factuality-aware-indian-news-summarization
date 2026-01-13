@@ -1,0 +1,20 @@
+{
+  "model_name": "BART-Large-CNN",
+  "model_id": "facebook/bart-large-cnn",
+  "evaluation_date": "2026-01-09 07:07:27",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 41.02,
+  "rouge2_mean": 21.54,
+  "rougeL_mean": 30.83,
+  "rouge1_std": 13.36,
+  "rouge2_std": 15.87,
+  "rougeL_std": 14.61,
+  "evaluation_time_seconds": 9587.64,
+  "time_per_sample": 53.26,
+  "avg_input_length": 521.0,
+  "avg_padded_length": 521.0,
+  "padding_overhead_percent": 0.0
+}

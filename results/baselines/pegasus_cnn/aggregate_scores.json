@@ -1,0 +1,20 @@
+{
+  "model_name": "PEGASUS-CNN",
+  "model_id": "google/pegasus-cnn_dailymail",
+  "evaluation_date": "2026-01-09 19:50:10",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 37.48,
+  "rouge2_mean": 17.72,
+  "rougeL_mean": 26.81,
+  "rouge1_std": 10.26,
+  "rouge2_std": 10.61,
+  "rougeL_std": 10.6,
+  "evaluation_time_seconds": 21900.08,
+  "time_per_sample": 109.5,
+  "avg_input_length": 470.0,
+  "avg_padded_length": 470.0,
+  "padding_overhead_percent": 0.0
+}

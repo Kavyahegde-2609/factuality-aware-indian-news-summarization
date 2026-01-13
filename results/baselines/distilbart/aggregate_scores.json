@@ -1,0 +1,20 @@
+{
+  "model_name": "DistilBART",
+  "model_id": "sshleifer/distilbart-cnn-12-6",
+  "evaluation_date": "2026-01-10 12:26:00",
+  "total_samples": 200,
+  "successful_samples": 200,
+  "failed_samples": 0,
+  "success_rate": 100.0,
+  "rouge1_mean": 42.05,
+  "rouge2_mean": 21.31,
+  "rougeL_mean": 30.32,
+  "rouge1_std": 12.17,
+  "rouge2_std": 13.49,
+  "rougeL_std": 12.79,
+  "evaluation_time_seconds": 3052.85,
+  "time_per_sample": 15.26,
+  "avg_input_length": 521.0,
+  "avg_padded_length": 521.0,
+  "padding_overhead_percent": 0.0
+}
