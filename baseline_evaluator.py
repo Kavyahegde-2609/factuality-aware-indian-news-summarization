@@ -39,10 +39,10 @@ class ResumableEvaluator:
         
         if torch.cuda.is_available():
             self.device = torch.device("cuda")
-            print(f"✓ Using GPU: {torch.cuda.get_device_name(0)}")
+            print(f" Using GPU: {torch.cuda.get_device_name(0)}")
         else:
             self.device = torch.device("cpu")
-            print(f"✓ Using CPU")
+            print(f" Using CPU")
         
         print(f"\n{'='*80}")
         print(f"RESUMABLE BASELINE EVALUATION - OPTIMIZED")
@@ -61,7 +61,7 @@ class ResumableEvaluator:
         if checkpoint_path.exists():
             with open(checkpoint_path, 'r') as f:
                 checkpoint = json.load(f)
-            print(f"✓ Found checkpoint: {checkpoint['completed_samples']} samples completed")
+            print(f" Found checkpoint: {checkpoint['completed_samples']} samples completed")
             return checkpoint
         return None
     
@@ -92,8 +92,8 @@ class ResumableEvaluator:
         if len(df) > max_samples:
             df = df.head(max_samples)
         
-        print(f"✓ Test file: {test_file.name}")
-        print(f"✓ Samples: {len(df):,}\n")
+        print(f" Test file: {test_file.name}")
+        print(f" Samples: {len(df):,}\n")
         
         return df
     
@@ -118,7 +118,7 @@ class ResumableEvaluator:
         """Load model with LED optimization"""
         is_led = 'led' in model_id.lower()
         
-        print(f"✓ Loading: {model_id}")
+        print(f" Loading: {model_id}")
         
         if is_led:
            tokenizer = LEDTokenizer.from_pretrained(model_id)
@@ -126,7 +126,7 @@ class ResumableEvaluator:
     
     # Keep original attention window for compatibility
            attention_window = model.config.attention_window[0] if isinstance(model.config.attention_window, list) else model.config.attention_window
-           print(f"  ✓ LED loaded with attention window: {attention_window}")
+           print(f"   LED loaded with attention window: {attention_window}")
         else:
             tokenizer = AutoTokenizer.from_pretrained(model_id)
             model = AutoModelForSeq2SeqLM.from_pretrained(model_id)
@@ -134,7 +134,7 @@ class ResumableEvaluator:
         model = model.to(self.device)
         model.eval()
         
-        print(f"✓ Model loaded on {self.device}\n")
+        print(f" Model loaded on {self.device}\n")
         
         return model, tokenizer, is_led
     
@@ -197,10 +197,10 @@ class ResumableEvaluator:
             if checkpoint:
                 results = checkpoint['results']
                 start_idx = checkpoint['completed_samples']
-                print(f"✓ Resuming from sample {start_idx}")
+                print(f" Resuming from sample {start_idx}")
                 
                 if start_idx >= len(test_df):
-                    print(f"✓ Already completed!")
+                    print(f" Already completed!")
                     return self.load_final_results(model_name)
         
         start_time = time.time()
@@ -208,7 +208,7 @@ class ResumableEvaluator:
         try:
             model, tokenizer, is_long_context = self.load_model_optimized(model_id)
         except Exception as e:
-            print(f"✗ Failed to load model: {e}")
+            print(f" Failed to load model: {e}")
             return None
         
         rouge1_scores, rouge2_scores, rougeL_scores = [], [], []
@@ -217,7 +217,7 @@ class ResumableEvaluator:
         total_input_length = sum(r.get('input_length', 0) for r in results)
         total_padded_length = sum(r.get('padded_length', 0) for r in results)
         
-        print(f"✓ Generating summaries ({start_idx}/{len(test_df)} → {len(test_df)})...")
+        print(f"Generating summaries ({start_idx}/{len(test_df)} → {len(test_df)})...")
         
         for idx in tqdm(range(start_idx, len(test_df)), desc=model_name, initial=start_idx, total=len(test_df)):
             try:
@@ -260,7 +260,7 @@ class ResumableEvaluator:
             except Exception as e:
                 failed.append(idx)
                 if len(failed) <= 5:
-                    print(f"\n✗ Error on {idx}: {str(e)[:100]}")
+                    print(f"\n Error on {idx}: {str(e)[:100]}")
                 continue
         
         elapsed = time.time() - start_time
@@ -323,7 +323,7 @@ class ResumableEvaluator:
         if checkpoint_path.exists():
             checkpoint_path.unlink()
         
-        print(f"✓ Saved to: {model_dir}\n")
+        print(f" Saved to: {model_dir}\n")
         
         del model
         del tokenizer
@@ -362,7 +362,7 @@ class ResumableEvaluator:
                 else:
                     failed_models.append(model_name)
             except Exception as e:
-                print(f"\n✗ FAILED: {model_name}")
+                print(f"\n FAILED: {model_name}")
                 print(f"Error: {str(e)[:200]}")
                 failed_models.append(model_name)
         
@@ -405,7 +405,7 @@ def main():
     
     results = evaluator.run_all_baselines(resume=resume)
     
-    print(f"\n✓ BASELINE EVALUATION COMPLETE!")
+    print(f"\n BASELINE EVALUATION COMPLETE!")
     print(f"✓ Models evaluated: {len(results)}")
 
 
