@@ -1,0 +1,49 @@
+{
+  "model_name": "LED-NewsSumm",
+  "base_model": "allenai/led-large-16384-arxiv",
+  "training_date": "2025-01-15",
+  "status": "COMPLETE",
+  "training_configuration": {
+    "training_samples": 10000,
+    "validation_samples": 1000,
+    "epochs": 2,
+    "batch_size_per_device": 1,
+    "gradient_accumulation_steps": 8,
+    "effective_batch_size": 8,
+    "learning_rate": 3e-5,
+    "weight_decay": 0.01,
+    "max_gradient_norm": 1.0,
+    "input_max_length": 1024,
+    "summary_max_length": 128,
+    "fp16": true,
+    "fp16_opt_level": "O1",
+    "gradient_checkpointing": true
+  },
+  "training_progress": [
+    {"step": 500, "train_loss": 1.289, "val_loss": 1.249},
+    {"step": 1000, "train_loss": 1.239, "val_loss": 1.197},
+    {"step": 1500, "train_loss": 0.959, "val_loss": 1.189},
+    {"step": 2000, "train_loss": 0.944, "val_loss": 1.167},
+    {"step": 2500, "train_loss": 0.921, "val_loss": 1.158}
+  ],
+  "final_results": {
+    "total_steps": 2500,
+    "training_time": "3:54:23",
+    "initial_train_loss": 1.289,
+    "final_train_loss": 0.921,
+    "train_loss_reduction": 0.368,
+    "train_loss_reduction_percent": 28.5,
+    "initial_val_loss": 1.249,
+    "final_val_loss": 1.158,
+    "val_loss_reduction": 0.091,
+    "val_loss_reduction_percent": 7.3
+  },
+  "hardware": {
+    "platform": "Kaggle Notebooks",
+    "gpu": "NVIDIA Tesla P100",
+    "vram": "16GB",
+    "framework": "PyTorch 2.0",
+    "transformers_version": "4.36"
+  },
+  "novel_contribution": "First LED model fine-tuned specifically for Indian English multi-document news summarization"
+}
